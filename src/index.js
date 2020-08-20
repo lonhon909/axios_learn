@@ -38,7 +38,10 @@ import App from './App';
 import Container from './Container';
 import router from './route';
 import axios from 'axios';
+import iView from 'iview';
+// import 'iview/dist/styles/iview.css';
 
+Vue.use(iView);
 Vue.prototype.$axios = axios;
 
 import './common/style/reset.less';

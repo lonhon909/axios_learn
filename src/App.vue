@@ -13,6 +13,7 @@
       <a class="get" href="http://11.241.8.195:3000/download">a标签下载</a>
       <section class="get" @click="cancel">取消请求</section>
     </div>
+    <input type="file" @change="filechange">
   </div>
 </template>
 
@@ -31,6 +32,12 @@ export default {
     return {
       
     }
+  },
+  mounted() {
+    axios({
+      method: 'post',
+      url: 'http://e-stg1.hrx.pingan.com.cn/hbp-api/hbp-s3adapter-web/test-token/CHDUIE8QRPG16AJFM2B9NL0OS3TK574/C1584063722001/buck-obs',
+    })
   },
   methods: {
     getData(index) {
@@ -75,6 +82,9 @@ export default {
       } catch (error) {
         
       }
+    },
+    filechange(e) {
+      console.log(e);
     }
   },
 }
